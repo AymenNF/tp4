@@ -14,16 +14,19 @@ import java.util.List;
 import static io.restassured.RestAssured.given;
 
 public class APIHelper {
-    public static Response bookZeroGravityExperience(String cruiseId, String bookingId, String travellerId, String dateTime) {
+    public static Response bookZeroGravityExperience(String cruiseId, String bookingId, String travellerId,
+            String dateTime) {
         ZeroGravityExperienceRequest zeroGravityExperienceRequest = new ZeroGravityExperienceRequest();
         zeroGravityExperienceRequest.experienceBookingDateTime = dateTime;
 
-        String uri = "/cruises/" + cruiseId + "/bookings/" + bookingId + "/travelers/" + travellerId + "/zeroGravityExperiences";
+        String uri = "/cruises/" + cruiseId + "/bookings/" + bookingId + "/travelers/" + travellerId
+                + "/zeroGravityExperiences";
         return makePostRequest(uri, zeroGravityExperienceRequest);
     }
 
-    public static Response createBooking(String cruiseId, String validAccountUsername, String validCabinType, String validBookingDateTime,
-                                         List<String> adultNames, List<String> childNames, List<String> seniorNames) {
+    public static Response createBooking(String cruiseId, String validAccountUsername, String validCabinType,
+            String validBookingDateTime,
+            List<String> adultNames, List<String> childNames, List<String> seniorNames) {
         NewBookingDto newBookingDto = new NewBookingDto();
         newBookingDto.cabinType = validCabinType;
         newBookingDto.accountUsername = validAccountUsername;
@@ -99,18 +102,18 @@ public class APIHelper {
 
     private static Response makeGetRequest(String uri) {
         return given().port(UspaceMain.PORT)
-                      .when().get(uri);
+                .when().get(uri);
     }
 
     private static Response makePostRequest(String uri, Object body) {
         return given().header("Content-Type", "application/json")
-                      .port(UspaceMain.PORT)
-                      .body(body)
-                      .when().post(uri);
+                .port(UspaceMain.PORT)
+                .body(body)
+                .when().post(uri);
     }
 
     private static Response makeDeleteRequest(String uri) {
         return given().port(UspaceMain.PORT)
-               .when().delete(uri);
+                .when().delete(uri);
     }
 }

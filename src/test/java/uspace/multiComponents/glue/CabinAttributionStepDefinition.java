@@ -15,12 +15,20 @@ public class CabinAttributionStepDefinition {
 
     @Etantdonné("une réservation pour {string} avec {int} voyageur\\(s) et date de réservation {string}")
     public void uneReservationPour(String username, int numberOfTravelers, String bookingDateTime) {
+        // Ensure account exists before creating booking
+        io.restassured.response.Response accountResponse = APIHelper.createAccount(username, "Earth");
+        // Accept 201 (created) or 400 (already exists)
+        int statusCode = accountResponse.getStatusCode();
+        if (statusCode != 201 && statusCode != 400) {
+            throw new RuntimeException("Failed to create/verify account: " + statusCode);
+        }
+
         List<String> adultNames = new java.util.ArrayList<>();
         for (int i = 0; i < numberOfTravelers; i++) {
             adultNames.add("Traveler" + i);
         }
-        APIHelper.createBooking(VALID_CRUISE_ID, username, "STANDARD", bookingDateTime, 
-            adultNames, List.of(), List.of());
+        APIHelper.createBooking(VALID_CRUISE_ID, username, "STANDARD", bookingDateTime,
+                adultNames, List.of(), List.of());
     }
 
     @Quand("les attributions de cabines sont obtenues avec le critère {string}")
@@ -31,22 +39,22 @@ public class CabinAttributionStepDefinition {
     @Alors("les attributions de cabines sont retournées")
     public void lesAttributionsDeCabinesSontRetournees() {
         ResponseMemory.getResponse().then()
-            .statusCode(200)
-            .body("cabins", notNullValue());
+                .statusCode(200)
+                .body("cabins", notNullValue());
     }
 
     @Alors("les cabines sont triées par date de réservation")
     public void lesCabinesSontTrieesParDateDeReservation() {
         ResponseMemory.getResponse().then()
-            .body("cabins", notNullValue())
-            .body("cabins.size()", greaterThan(0));
+                .body("cabins", notNullValue())
+                .body("cabins.size()", greaterThan(0));
     }
 
     @Alors("les cabines sont triées par nombre de voyageurs puis par date de réservation")
     public void lesCabinesSontTrieesParNombreDeVoyageursPuisParDateDeReservation() {
         ResponseMemory.getResponse().then()
-            .body("cabins", notNullValue())
-            .body("cabins.size()", greaterThan(0));
+                .body("cabins", notNullValue())
+                .body("cabins.size()", greaterThan(0));
     }
 
     @Quand("les attributions de cabines sont obtenues pour la croisière {string} avec le critère {string}")

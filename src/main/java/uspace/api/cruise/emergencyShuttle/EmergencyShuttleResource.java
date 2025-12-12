@@ -10,18 +10,23 @@ import uspace.application.cruise.emergencyShuttle.dtos.EmergencyShuttleManifestD
 @Path("/cruises/{cruiseId}/emergencyShuttles")
 @Produces(MediaType.APPLICATION_JSON)
 public class EmergencyShuttleResource {
-    
+
     private final EmergencyShuttleService emergencyShuttleService;
-    
+
     @Inject
     public EmergencyShuttleResource(EmergencyShuttleService emergencyShuttleService) {
         this.emergencyShuttleService = emergencyShuttleService;
     }
-    
+
     @GET
     public Response getEmergencyShuttleManifest(@PathParam("cruiseId") String cruiseId) {
         EmergencyShuttleManifestDto manifest = emergencyShuttleService.getEmergencyShuttleManifest(cruiseId);
+        try {
+            System.out.println("DEBUG: Response JSON: "
+                    + new com.fasterxml.jackson.databind.ObjectMapper().writeValueAsString(manifest));
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
         return Response.ok(manifest).build();
     }
 }
-

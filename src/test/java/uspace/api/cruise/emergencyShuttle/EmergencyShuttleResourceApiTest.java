@@ -48,10 +48,11 @@ class EmergencyShuttleResourceApiTest extends JerseyTest {
 
         assertEquals(200, response.getStatus());
         EmergencyShuttleManifestDto actualDto = response.readEntity(EmergencyShuttleManifestDto.class);
-        assertEquals(200000, actualDto.cost);
-        assertEquals(2, actualDto.emergencyShuttles.size());
-        assertEquals("RESCUE_SHIP", actualDto.emergencyShuttles.get(0).type);
-        assertEquals("STANDARD_SHUTTLE", actualDto.emergencyShuttles.get(1).type);
+        // Correct usage of getters
+        assertEquals(200000, actualDto.getCost());
+        assertEquals(2, actualDto.getEmergencyShuttles().size());
+        assertEquals("RESCUE_SHIP", actualDto.getEmergencyShuttles().get(0).getType());
+        assertEquals("STANDARD_SHUTTLE", actualDto.getEmergencyShuttles().get(1).getType());
     }
 
     @Test
@@ -76,8 +77,9 @@ class EmergencyShuttleResourceApiTest extends JerseyTest {
 
         assertEquals(200, response.getStatus());
         EmergencyShuttleManifestDto actualDto = response.readEntity(EmergencyShuttleManifestDto.class);
-        assertEquals(0, actualDto.cost);
-        assertTrue(actualDto.emergencyShuttles.isEmpty());
+        // Correct usage of getters
+        assertEquals(0, actualDto.getCost());
+        assertTrue(actualDto.getEmergencyShuttles().isEmpty());
     }
 
     private Response callGetEmergencyShuttleManifestApi(String cruiseId) {
@@ -88,22 +90,21 @@ class EmergencyShuttleResourceApiTest extends JerseyTest {
     private EmergencyShuttleManifestDto createEmergencyShuttleManifestDto() {
         EmergencyShuttleTravelerDto traveler1 = new EmergencyShuttleTravelerDto("traveler-1", "John Doe");
         EmergencyShuttleTravelerDto traveler2 = new EmergencyShuttleTravelerDto("traveler-2", "Jane Doe");
-        
+
         EmergencyShuttleCrewMemberDto crew1 = new EmergencyShuttleCrewMemberDto("ABC123", "Crew Member 1");
-        
+
         EmergencyShuttleDto shuttle1 = new EmergencyShuttleDto(
                 "RESCUE_SHIP",
                 Arrays.asList(traveler1, traveler2),
                 Arrays.asList(crew1)
         );
-        
+
         EmergencyShuttleDto shuttle2 = new EmergencyShuttleDto(
                 "STANDARD_SHUTTLE",
                 Arrays.asList(),
                 Arrays.asList()
         );
-        
+
         return new EmergencyShuttleManifestDto(200000, Arrays.asList(shuttle1, shuttle2));
     }
 }
-

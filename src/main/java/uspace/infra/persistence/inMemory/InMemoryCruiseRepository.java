@@ -11,8 +11,13 @@ public class InMemoryCruiseRepository implements CruiseRepository {
 
     private static final Map<CruiseId, Cruise> cruises = new HashMap<>();
 
+    public InMemoryCruiseRepository() {
+        System.out.println("DEBUG: InMemoryCruiseRepository created. Instance: " + System.identityHashCode(this));
+    }
+
     @Override
     public Cruise findById(CruiseId cruiseId) {
+        System.out.println("DEBUG: InMemoryCruiseRepository.findById: " + cruiseId + ". Map keys: " + cruises.keySet());
         return cruises.get(cruiseId);
     }
 

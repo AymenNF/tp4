@@ -11,6 +11,9 @@ public class InMemoryAccountRepository implements AccountRepository {
 
     private static final Map<AccountUsername, Account> accounts = new HashMap<>();
 
+    public InMemoryAccountRepository() {
+    }
+
     @Override
     public Account findByUsername(AccountUsername username) {
         return accounts.get(username);
