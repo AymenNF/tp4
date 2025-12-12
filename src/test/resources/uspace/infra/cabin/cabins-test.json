@@ -1,0 +1,23 @@
+{
+  "cabins": [
+    {
+      "category": "STANDARD",
+      "ids": [
+        "A1", "A2"
+      ]
+    },
+    {
+      "category": "DELUXE",
+      "ids": [
+        "K1", "K2"
+      ]
+    },
+    {
+      "category": "SUITE",
+      "ids": [
+        "R1"
+      ]
+    }
+  ]
+}
+

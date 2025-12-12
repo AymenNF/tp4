@@ -1,0 +1,129 @@
+{
+  "sports": [
+    {
+      "name": "Zero-Gravity Basketball",
+      "cruises": ["JUPITER_MOONS_EXPLORATION_2085", "GALAXY_CRUISE_2100", "INTERGALACTIC_TOUR_2075"],
+      "audience": "ALL"
+    },
+    {
+      "name": "Meteor Dodgeball",
+      "cruises": ["JUPITER_MOONS_EXPLORATION_2085", "STELLAR_ADVENTURE_2060"],
+      "audience": "CHILD"
+    },
+    {
+      "name": "Lunar Rock Climbing",
+      "cruises": ["JUPITER_MOONS_EXPLORATION_2085", "MOON_TOURS_2055"],
+      "audience": "ADULT"
+    },
+    {
+      "name": "Galactic Surfing",
+      "cruises": ["JUPITER_MOONS_EXPLORATION_2085", "INTERGALACTIC_TOUR_2075"],
+      "audience": "ALL"
+    },
+    {
+      "name": "Asteroid Racing",
+      "cruises": ["JUPITER_MOONS_EXPLORATION_2085", "GALAXY_CRUISE_2100"],
+      "audience": "ALL"
+    },
+    {
+      "name": "Jupiter Moons Marathon",
+      "cruises": ["JUPITER_MOONS_EXPLORATION_2085"],
+      "audience": "SENIOR"
+    },
+    {
+      "name": "Gravity Soccer",
+      "cruises": ["JUPITER_MOONS_EXPLORATION_2085", "GALAXY_CRUISE_2100", "MOON_TOURS_2055"],
+      "audience": "ALL"
+    },
+    {
+      "name": "Space Parkour",
+      "cruises": ["JUPITER_MOONS_EXPLORATION_2085", "INTERGALACTIC_TOUR_2075"],
+      "audience": "TEEN"
+    },
+    {
+      "name": "Stellar Gymnastics",
+      "cruises": ["JUPITER_MOONS_EXPLORATION_2085", "STELLAR_ADVENTURE_2060"],
+      "audience": "CHILD"
+    },
+    {
+      "name": "Orbital Archery",
+      "cruises": ["JUPITER_MOONS_EXPLORATION_2085", "GALAXY_CRUISE_2100"],
+      "audience": "ADULT"
+    },
+    {
+      "name": "Satellite Hurdles",
+      "cruises": ["JUPITER_MOONS_EXPLORATION_2085", "MOON_TOURS_2055"],
+      "audience": "ALL"
+    },
+    {
+      "name": "Comet Skiing",
+      "cruises": ["JUPITER_MOONS_EXPLORATION_2085", "INTERGALACTIC_TOUR_2075"],
+      "audience": "TEEN"
+    },
+    {
+      "name": "Moonlight Yoga",
+      "cruises": ["JUPITER_MOONS_EXPLORATION_2085", "MOON_TOURS_2055"],
+      "audience": "SENIOR"
+    },
+    {
+      "name": "Cosmic Martial Arts",
+      "cruises": ["JUPITER_MOONS_EXPLORATION_2085", "STELLAR_ADVENTURE_2060"],
+      "audience": "ADULT"
+    },
+    {
+      "name": "Jovian Ice Skating",
+      "cruises": ["JUPITER_MOONS_EXPLORATION_2085", "GALAXY_CRUISE_2100"],
+      "audience": "ALL"
+    },
+    {
+      "name": "Solar Sail Racing",
+      "cruises": ["INTERGALACTIC_TOUR_2075", "STELLAR_ADVENTURE_2060"],
+      "audience": "ALL"
+    },
+    {
+      "name": "Mars Rover Challenge",
+      "cruises": ["MARS_EXPEDITION_2090"],
+      "audience": "CHILD"
+    },
+    {
+      "name": "Asteroid Field Maze",
+      "cruises": ["INTERGALACTIC_TOUR_2075", "GALAXY_CRUISE_2100"],
+      "audience": "TEEN"
+    },
+    {
+      "name": "Space Football",
+      "cruises": ["GALAXY_CRUISE_2100", "JUPITER_MOONS_EXPLORATION_2085"],
+      "audience": "ALL"
+    },
+    {
+      "name": "Supernova Bowling",
+      "cruises": ["STELLAR_ADVENTURE_2060"],
+      "audience": "SENIOR"
+    },
+    {
+      "name": "Lunar Golf",
+      "cruises": ["MOON_TOURS_2055", "GALAXY_CRUISE_2100"],
+      "audience": "ADULT"
+    },
+    {
+      "name": "Astro-Fencing",
+      "cruises": ["GALAXY_CRUISE_2100", "INTERGALACTIC_TOUR_2075"],
+      "audience": "ALL"
+    },
+    {
+      "name": "Nebula Diving",
+      "cruises": ["INTERGALACTIC_TOUR_2075", "STELLAR_ADVENTURE_2060"],
+      "audience": "ALL"
+    },
+    {
+      "name": "Starlight Dance-offs",
+      "cruises": ["STELLAR_ADVENTURE_2060", "JUPITER_MOONS_EXPLORATION_2085"],
+      "audience": "ALL"
+    },
+    {
+      "name": "Gravity-Free Tennis",
+      "cruises": ["JUPITER_MOONS_EXPLORATION_2085", "MOON_TOURS_2055"],
+      "audience": "ADULT"
+    }
+  ]
+}

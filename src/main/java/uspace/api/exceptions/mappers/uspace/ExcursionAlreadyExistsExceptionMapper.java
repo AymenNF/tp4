@@ -1,0 +1,17 @@
+package uspace.api.exceptions.mappers.uspace;
+
+import jakarta.ws.rs.core.Response;
+import jakarta.ws.rs.ext.ExceptionMapper;
+import jakarta.ws.rs.ext.Provider;
+import uspace.api.exceptions.ErrorResponse;
+import uspace.domain.cruise.itinerary.exceptions.ExcursionAlreadyExistsException;
+
+@Provider
+public class ExcursionAlreadyExistsExceptionMapper implements ExceptionMapper<ExcursionAlreadyExistsException> {
+
+    @Override
+    public Response toResponse(ExcursionAlreadyExistsException exception) {
+        ErrorResponse error = new ErrorResponse("EXCURSION_ALREADY_EXISTS", exception.getMessage());
+        return Response.status(400).entity(error).build();
+    }
+}
